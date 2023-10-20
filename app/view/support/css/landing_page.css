@@ -1,0 +1,66 @@
+@import url("global.css");
+
+.grid{
+    grid-template-rows: repeat(auto, 6);
+    grid-template-columns: repeat(10%, 10);
+}
+
+.header{
+    display: grid;
+    background-color: black;
+    color: white;
+}
+
+.site-title{
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+}
+
+.nav{
+    grid-column: 10 / 11;
+    grid-row: 1 / 2;
+}
+
+.link-list{
+    height: 10vh;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
+
+.link{
+    margin: 0.7em;
+    padding: 0.5em;
+    color:white;
+    border: solid white 0.1em;
+    border-radius: 30% / 50%;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.link:hover{
+    color: black;
+    background-color: white;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.main-section{
+    background-image: url("../images/anime.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 11;
+    grid-row: 2 / 3;
+}
+
+.main-description{
+    
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+}
