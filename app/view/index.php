@@ -19,47 +19,57 @@
             </nav>
         </header>
 
-        <section class="main-section">
-            <div class="main-description">
-                <h1>Create topics and discuss</h1>
-                <p>Join people that like and consume the same as you!</p>
-            <div>
-        </section>
+        <main>
+            <section class="main-section">
+                <div class="main-description">
+                    <h1>Create topics and discuss</h1>
+                    <p>Join people that like and consume the same as you!</p>
+                <div>
+            </section>
 
-        <section>
-            <div>
-                <h1>Expose your ideas</h1>
-                <p>Tell everyone your opinion about your favorite animes, mangas, manhwas and many more</p>
-            </div>
-            <img src="#" alt="Expose your ideas image">
-        </section>
+            <section class="feature-section">
+                <div class="feature-description">
+                    <h1>Expose your ideas</h1>
+                    <p>Tell everyone your opinion about your favorite animes, mangas, manhwas and many more</p>
+                </div>
+                <img class="feature-image" src="support/images/pe_no_saco.png" alt="Expose your ideas image">
+            </section>
 
-        <section>
-            <div>
-                <h1>Share any media</h1>
-                <p>An image tells more than a thousand words, what about videos and gifs?</p>
-            </div>
-            <img src="#" alt="Share any media image">
-        </section>
+            <section class="feature-section-reverse">
+                <div class="feature-description">
+                    <h1>Share any media</h1>
+                    <p>An image tells more than a thousand words, what about videos and gifs?</p>
+                </div>
+                <img class="feature-image" src="support/images/media_example.png" alt="Share any media image">
+            </section>
 
-        <section>
-            <div>
-                <h1>Share your posts over the internet</h1>
-                <p>This is your oportunity to attract more traffic on your posts</p>
-            </div>
-            <img src="#" alt="Expose your ideas example">
-        </section>
+            <section class="feature-section">
+                <div class="feature-description">
+                    <h1>Share your posts over the internet</h1>
+                    <p>This is your oportunity to attract more traffic on your posts</p>
+                </div>
+                <img class="feature-image" src="support/images/happiness.png" alt="Expose your ideas example">
+            </section>
 
-        <section>
-            <div>
-                <h1>Save what you liked</h1>
-                <p>Favorite everything you want to see later</p>
-            </div>
-            <img src="#" alt="Expose your ideas example">
-        </section>
+            <section class="feature-section-reverse">
+                <div class="feature-description">
+                    <h1>Save what you like</h1>
+                    <p>Save your favorite posts and access them anytime</p>
+                </div>
+                <img class="feature-image" src="support/images/media_content.png" alt="Expose your ideas example">
+            </section>
+
+            <section class="feature-section">
+                <div class="feature-description">
+                    <h1>Create an account today!</h1>
+                    <p>What are you waiting for?</p>
+                </div>
+                <a class="link" href="#">Sign up</a>
+            </section>
+        </main>
 
         <footer>
-            <small>Copyright &copy; Rafael Marcos</small>
+            <small>Copyright &copy; Rafael Marcos 2023</small>
         </footer>
     </body>
 </html>
