@@ -1,5 +1,11 @@
 @import url("global.css");
 
+:root{
+    --background-color: #181818;
+    --text-color: white;
+    --transparent-black: rgba(0,0,0,0.7);
+}
+
 .grid{
     grid-template-rows: repeat(auto, 6);
     grid-template-columns: repeat(10%, 10);
@@ -8,7 +14,7 @@
 .header{
     display: grid;
     background-color: black;
-    color: white;
+    color: var(--text-color);
 }
 
 .site-title{
@@ -33,7 +39,7 @@
 .link{
     margin: 0.7em;
     padding: 0.5em;
-    color:white;
+    color:var(--text-color);
     border: solid white 0.1em;
     border-radius: 30% / 50%;
     text-decoration: none;
@@ -63,7 +69,7 @@
     justify-content: center;
     flex-direction: column;
 
-    background-color: rgba(0,0,0,0.7);
+    background-color: var(--transparent-black);
     height: inherit;
     color: white;
 
@@ -73,7 +79,7 @@
 section{
     height: 100vh;
     width: 100%;
-    color: white;
+    color: var(--text-color);
 }
 
 .feature-section{
@@ -105,5 +111,5 @@ section{
 /* footer */
 
 footer{
-    color: white
+    color: var(--text-color);
 }

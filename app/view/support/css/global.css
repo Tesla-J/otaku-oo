@@ -1,7 +1,13 @@
+:root{
+    --background-color: #181818;
+    --text-color: white;
+}
+
 body{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #181818;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
