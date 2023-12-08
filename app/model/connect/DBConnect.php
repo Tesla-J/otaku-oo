@@ -16,6 +16,7 @@ class DBConnect{
     }
 
     public function closeConnection(){
+        // TODO properly close connection with the server
         DBConnect::$instance = null;
     }
 

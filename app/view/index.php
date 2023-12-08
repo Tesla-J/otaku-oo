@@ -13,8 +13,8 @@
             <h1 class="site-title">Otaku Oo</h1>
             <nav class="nav"> 
                 <ul class="link-list">
-                        <li><a class="link" href="#">Sign up</a></li>
-                        <li><a class="link" href="#">Sign in</a></li>
+                        <li><a class="link" href="signup.php">Sign up</a></li>
+                        <li><a class="link" href="signin.php">Sign in</a></li>
                 </ul>    
             </nav>
         </header>
@@ -64,7 +64,7 @@
                     <h1>Create an account today!</h1>
                     <p>What are you waiting for?</p>
                 </div>
-                <a class="link" href="#">Sign up</a>
+                <a class="link" href="signup.php">Sign up</a>
             </section>
         </main>
 
@@ -73,3 +73,20 @@
         </footer>
     </body>
 </html>
+
+<?php
+    spl_autoload_register(function ($file) {
+        if(file_exists(__DIR__."/$file"))
+            require_once __DIR__."/$file";
+        if(file_exists(__DIR__."../model/$file"))
+            require_once __DIR__."../model/$file";
+        if(file_exists(__DIR__."../model/dao/$file"))
+            require_once __DIR__."../model/dao/$file";
+        if(file_exists(__DIR__."../model/dto/$file"))
+            require_once __DIR__."../model/dto/$file";
+        if(file_exists(__DIR__."../model/connect/$file"))
+            require_once __DIR__."../model/connect/$file";
+        if(file_exists(__DIR__."../controller/$file"))
+            require_once __DIR__."../controller/$file";
+    });
+?>
