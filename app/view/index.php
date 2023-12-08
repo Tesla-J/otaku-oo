@@ -78,15 +78,15 @@
     spl_autoload_register(function ($file) {
         if(file_exists(__DIR__."/$file"))
             require_once __DIR__."/$file";
-        if(file_exists(__DIR__."../model/$file"))
-            require_once __DIR__."../model/$file";
-        if(file_exists(__DIR__."../model/dao/$file"))
-            require_once __DIR__."../model/dao/$file";
-        if(file_exists(__DIR__."../model/dto/$file"))
-            require_once __DIR__."../model/dto/$file";
-        if(file_exists(__DIR__."../model/connect/$file"))
-            require_once __DIR__."../model/connect/$file";
-        if(file_exists(__DIR__."../controller/$file"))
-            require_once __DIR__."../controller/$file";
+        if(file_exists(__DIR__."/../model/$file"))
+            require_once __DIR__."/../model/$file";
+        if(file_exists(__DIR__."/../model/dao/$file"))
+            require_once __DIR__."/../model/dao/$file";
+        if(file_exists(__DIR__."/../model/dto/$file"))
+            require_once __DIR__."/../model/dto/$file";
+        if(file_exists(__DIR__."/../model/connect/$file"))
+            require_once __DIR__."/../model/connect/$file";
+        if(file_exists(__DIR__."/../controller/$file"))
+            require_once __DIR__."/../controller/$file";
     });
 ?>
