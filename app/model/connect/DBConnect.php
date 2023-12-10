@@ -1,26 +1,24 @@
 <?php
 class DBConnect{
-    private $user;
-    private $password;
-    private $server;
-    private $port;
+    private $client;
 
-    private static $instance = null;
+    private static $instance;
 
-    private function __construct(){}
-
-    public static function getInstance(){
-        if(DBConnect::$instance == null)
-            DBConnect::$instance = new DBConnect();
-        return DBConnect::$instance;
+    private function __construct(){
+        $this->client = new MongoDB\Driver\Manager();
     }
 
-    public function closeConnection(){
-        // TODO properly close connection with the server
-        DBConnect::$instance = null;
+    private function __clone(){}
+
+    private function __wakeup(){}
+
+    public static function getInstance() : DBConnect{
+        if(!isset(self::$instance))
+            self::$instance = new static();
+        return self::$instance;
     }
 
-    public function __destruct(){
-        $this->closeConnection();
+    public function getClient() : MongoDB\Driver\Manager{
+        return $this->client;
     }
 }
