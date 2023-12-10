@@ -15,11 +15,13 @@ class Core{
             //}
             
             list($class, $method) = explode('@', $controller);
-            if(preg_match_all('#/#', $path)){
+            if(preg_match('#^/$#', $url)){
                 (new $class())->$method();
                 return;
             }  
-        
+            else{
+                (new NotFoundController())->display();
+            }
         }
     }
 }
