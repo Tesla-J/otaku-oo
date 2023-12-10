@@ -9,15 +9,7 @@
     </head>
 
     <body class="grid">
-        <header class="header">
-            <h1 class="site-title">Otaku Oo</h1>
-            <nav class="nav"> 
-                <ul class="link-list">
-                        <li><a class="link" href="signup.php">Sign up</a></li>
-                        <li><a class="link" href="signin.php">Sign in</a></li>
-                </ul>    
-            </nav>
-        </header>
+        <? require_once 'header.php' ?>
 
         <main>
             <section class="main-section">
@@ -68,8 +60,6 @@
             </section>
         </main>
 
-        <footer>
-            <small>Copyright &copy; Rafael Marcos 2023</small>
-        </footer>
+        <? require_once 'footer.php' ?>
     </body>
 </html>
