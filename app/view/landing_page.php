@@ -56,7 +56,7 @@
                     <h1>Create an account today!</h1>
                     <p>What are you waiting for?</p>
                 </div>
-                <a class="link" href="signup.php">Sign up</a>
+                <a class="link" href="user/signup">Sign up</a>
             </section>
         </main>
 

@@ -8,16 +8,21 @@ class Core{
         
         foreach($routes as $path => $controller){
             //$pattern = '#^'.preg_replace('/{id}/' , '(\w+)' , $path).'$#';
-        
-
             //if(preg_match($pattern , $url, $matches)){
             //    print_r($matches);
             //}
             
+            $pattern = '#^'.$path.'$#';
+            
             list($class, $method) = explode('@', $controller);
-            if(preg_match('#^/$#', $url)){
+
+            # for simple path
+            if(preg_match($pattern, $url)){
                 (new $class())->$method();
-                return;
+            }
+            # for user signin, signup and signout
+            else if(preg_match('#^/user/sign(in|out|up)$#', $url)){
+                echo "";// (new $class())->$method();
             }  
             else{
                 (new NotFoundController())->display();
