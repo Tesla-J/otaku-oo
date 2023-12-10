@@ -5,7 +5,7 @@
         <meta charset="utf8">
         <meta name="description" content="A forum from otakus to otakus - Join us">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="support/css/landing_page.css"/>
+        <link rel="stylesheet" href="/view/support/css/landing_page.css"/>
     </head>
 
     <body class="grid">
@@ -32,7 +32,7 @@
                     <h1>Expose your ideas</h1>
                     <p>Tell everyone your opinion about your favorite animes, mangas, manhwas and many more</p>
                 </div>
-                <img class="feature-image" src="support/images/pe_no_saco.png" alt="Expose your ideas image">
+                <img class="feature-image" src="view/support/images/pe_no_saco.png" alt="Expose your ideas image">
             </section>
 
             <section class="feature-section-reverse">
@@ -40,7 +40,7 @@
                     <h1>Share any media</h1>
                     <p>An image tells more than a thousand words, what about videos and gifs?</p>
                 </div>
-                <img class="feature-image" src="support/images/media_example.png" alt="Share any media image">
+                <img class="feature-image" src="view/support/images/media_example.png" alt="Share any media image">
             </section>
 
             <section class="feature-section">
@@ -48,7 +48,7 @@
                     <h1>Share your posts over the internet</h1>
                     <p>This is your oportunity to attract more traffic on your posts</p>
                 </div>
-                <img class="feature-image" src="support/images/happiness.png" alt="Expose your ideas example">
+                <img class="feature-image" src="view/support/images/happiness.png" alt="Expose your ideas example">
             </section>
 
             <section class="feature-section-reverse">
@@ -56,7 +56,7 @@
                     <h1>Save what you like</h1>
                     <p>Save your favorite posts and access them anytime</p>
                 </div>
-                <img class="feature-image" src="support/images/media_content.png" alt="Expose your ideas example">
+                <img class="feature-image" src="view/support/images/media_content.png" alt="Expose your ideas example">
             </section>
 
             <section class="feature-section">
