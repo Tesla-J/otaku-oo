@@ -13,17 +13,21 @@ class Core{
             //}
             
             $pattern = '#^'.$path.'$#';
-            
+
             list($class, $method) = explode('@', $controller);
 
             # for simple path
             if(preg_match($pattern, $url)){
                 (new $class())->$method();
             }
-            # for user signin, signup and signout
-            else if(preg_match('#^/user/sign(in|out|up)$#', $url)){
-                echo "";// (new $class())->$method();
-            }  
+            # for paths with single id parameter
+            else if(preg_match('#^single id$#', $url)){
+                echo "";
+            }
+            # for paths with two id parameters
+            else if(preg_match("#double id#", $url)){
+                echo '';
+            }
             else{
                 (new NotFoundController())->display();
             }
