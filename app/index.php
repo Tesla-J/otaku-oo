@@ -1,4 +1,6 @@
 <?php
+    echo $_GET['url'];
+
     spl_autoload_register(function ($file) {
         if(file_exists(__DIR__."/$file.php"))
             require_once __DIR__."/$file.php";
