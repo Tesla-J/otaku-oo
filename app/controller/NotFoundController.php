@@ -1,7 +1,7 @@
 <?php
 
-class NotFoundController{
-    public function display(){
+class NotFoundController extends Controller{
+    public function display($id = null){
         require_once __DIR__ . "/../view/404.php";
     }
 }

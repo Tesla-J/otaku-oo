@@ -10,7 +10,7 @@ class DBConnect{
 
     private function __clone(){}
 
-    private function __wakeup(){}
+    //private function __wakeup(){}
 
     public static function getInstance() : DBConnect{
         if(!isset(self::$instance))

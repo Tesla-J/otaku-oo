@@ -1,23 +1,3 @@
-<?php
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            extract($_POST);
-
-            if($password1 != $password2){
-                echo "Passwords don't match";
-                return;
-            }
-
-            require_once(__DIR__ . "/../model/dto/UserDTO.php");
-            require_once(__DIR__ . "/../model/dao/TmpDAO.php");
-            
-            $dao = TmpDAO::getInstance();
-            $newUser = new UserDTO($dao->getCurrentUserId()+1, $username, $email, md5($password1));
-            $dao->addUser($newUser);
-
-            header("location: signin");
-        }
-    ?>
-
 <html>
 <head>
     <title>Otaku king - sign up</title>

@@ -1,24 +1,3 @@
-<?php
-
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            extract($_POST);
-
-            require_once(__DIR__ . "/../model/dto/UserDTO.php");
-            require_once(__DIR__ . "/../model/dao/TmpDAO.php");
-            
-            $dao = TmpDAO::getInstance();
-            $users = $dao->getUsers();
-
-            foreach($users as $id => $user){
-                if($user->getUsername() == $username && $user->getPasswordHash() == md5($password))
-                    header("location: post");
-                echo "Wrong login details!";
-            }
-
-            var_dump($users);//header("location: signin");
-        }
-    ?>
-
 <html>
 <head>
     <title>Otaku king - sign up</title>

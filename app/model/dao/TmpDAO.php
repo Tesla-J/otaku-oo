@@ -31,7 +31,6 @@ class TmpDAO{
     }
 
     private function __construct(){
-        require_once __DIR__ . "/../../view/index.php";
         $this->mongoClient = DBConnect::getInstance()->getClient();
 
         if(session_status() !== PHP_SESSION_ACTIVE)

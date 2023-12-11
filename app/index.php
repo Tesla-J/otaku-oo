@@ -17,6 +17,9 @@
             require_once __DIR__."/controller/$file.php";
     });
 
+    if(session_status() !== PHP_SESSION_ACTIVE)
+        session_start();
+
     $core = new Core();
     $core->run($routes);
 ?>
