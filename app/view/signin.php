@@ -11,11 +11,11 @@
 
             foreach($users as $id => $user){
                 if($user->getUsername() == $username && $user->getPasswordHash() == md5($password))
-                    header("location: home.php");
+                    header("location: post");
                 echo "Wrong login details!";
             }
 
-            var_dump($users);//header("location: signin.php");
+            var_dump($users);//header("location: signin");
         }
     ?>
 
@@ -28,7 +28,7 @@
 <body>
     
     <h1>sign in</h1>
-    <form action="signin.php" method="post">
+    <form action="signin" method="post">
 
         <label for="username">Username:</label>
         <input id="username" name="username" required/>
@@ -39,7 +39,7 @@
         <input type="submit" value="Sign in"/>
         <input type="reset" value="Clear" />
         <br>
-        <p>Don't have an account? <a href="signup.php">Sign up</a></p>
+        <p>Don't have an account? <a href="signup">Sign up</a></p>
     </form>
 </body>
 

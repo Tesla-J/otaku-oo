@@ -14,7 +14,7 @@
             $newUser = new UserDTO($dao->getCurrentUserId()+1, $username, $email, md5($password1));
             $dao->addUser($newUser);
 
-            header("location: signin.php");
+            header("location: signin");
         }
     ?>
 
@@ -26,7 +26,7 @@
 
 <body>
     <h1>sign up</h1>
-    <form action="signup.php" method="post">
+    <form action="signup" method="post">
 
         <label for="username">Username:</label>
         <input id="username" name="username" required/>
@@ -43,7 +43,7 @@
         <input type="submit" value="Sign up"/>
         <input type="reset" value="Clear" />
         <br>
-        <p>Already have an account? <a href="signin.php">Sign in</a></p>
+        <p>Already have an account? <a href="signin">Sign in</a></p>
     </form>
 </body>
 
