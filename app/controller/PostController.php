@@ -1,7 +1,7 @@
 <?php
 class PostController extends Controller{
     public function displayAll(){
-        require __DIR__ . "/../view/home.php";
+        $this->renderView("home");
     }
 
     public function addNew($dto = null){
