@@ -26,7 +26,7 @@ class UserDTO implements DTO{
             $data['id'],
             $data['username'],
             $data['email'],
-            "I'm not that dumb"
+            $data['passwordHash'] # Actually I am (personal joke, go 1 commit back to understand... if you can)
         );
     }
 }
