@@ -1,5 +1,5 @@
 <?php
-class PostDTO{
+class PostDTO implements DTO{
     private $id;
     private $title;
     private $author;
@@ -14,24 +14,24 @@ class PostDTO{
         $this->images = $images;
     }
 
-    public function getId(){
-        return $this->id;
+    public function toArray() : array{
+        return [
+            '_id' => $this->id,
+            'title' => $this->title,
+            'author' => $this->author,
+            'content' => $this->content,
+            'images' => $this->images
+        ];
     }
 
-    public function getTitle(){
-        return $this->title;
-    }
-
-    public function getAuthor(){
-        return $this->author;
-    }
-
-    public function getContent(){
-        return $this->content;
-    }
-
-    public function getImages(){
-        return $this->images;
+    public static function parseArray(array $data) : PostDTO{
+        return new self(
+            $data['id'],
+            $data['title'],
+            $data['author'],
+            $data['content'],
+            $data['images']
+        );
     }
 }
 ?>
