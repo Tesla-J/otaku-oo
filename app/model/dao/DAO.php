@@ -1,18 +1,19 @@
 <?php
 class DAO{
     protected $manager;
-    protected $collection;
+    private $collection;
+    private $bulkWrite;
 
 
     # $collection : specifies the collection we'll work with
     public function __construct(string $collection){
         $this->collection = $collection;
         $this->manager = DBConnect::getInstance()->getManager();
+        $this->bulkWrite = new MongoDB\Driver\BulkWrite;
     }
 
     public function insertOne(DTO $dto){
         try{
-            $bulkWrite = new MongoDB\Driver\BulkWrite;
             $bulkWrite->insertOne($dto->toArray());
             $this->manager->executeBulkWrite($this->collection, $bulkWrite);
         }
