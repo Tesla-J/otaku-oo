@@ -15,7 +15,7 @@ class DAO{
     public function insertOne(DTO $dto){
         try{
             $this->bulkWrite->insertOne($dto->toArray());
-            $this->manager->executeBulkWrite($this->collection, $bulkWrite);
+            $this->manager->executeBulkWrite($this->collection, $this->bulkWrite);
         }
         catch(MongoDB\Driver\Exception\Exception $e){
             echo $e->getMessage();
@@ -43,7 +43,7 @@ class DAO{
     public function update($id, $dto){
         try{
             $this->bulkWrite->update(['_id' => $id], $dto->toArray());
-            $this->manager->executeBulkWrite($this->collection, $bulkWrite);
+            $this->manager->executeBulkWrite($this->collection, $this->bulkWrite);
         }
         catch(MongoDB\Driver\Exception\Exception $e){
             echo $e->getMessage();
@@ -53,7 +53,7 @@ class DAO{
     public function delete($id){
         try{
             $this->bulkWrite->delete(['_id' => $id]);
-            $this->manager->executeBulkWrite($this->collection, $bulkWrite);
+            $this->manager->executeBulkWrite($this->collection, $this->managerbulkWrite);
         }
         catch(MongoDB\Driver\Exception\Exception $e){
             echo $e->getMessage();
