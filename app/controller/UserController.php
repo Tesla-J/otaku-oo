@@ -1,11 +1,8 @@
 <?php
 class UserController extends Controller{
-    private $collection;
 
     public function __construct(){
-        parent::__construct();
-
-        //$this->collection = $this->dbClient->otaku_king->users;    
+        parent::__construct();   
     }
 
     public function authenticate(){
@@ -39,12 +36,6 @@ class UserController extends Controller{
                 echo "Passwords don't match";
                 return;
             }
-
-            $this->dbClient->insertOne([
-                "username" => $username,
-                "password" => md5($password1),
-                "email" => $email
-            ]);
             
             $dao = TmpDAO::getInstance();
             $newUser = new UserDTO($dao->getCurrentUserId()+1, $username, $email, md5($password1));

@@ -1,9 +1,10 @@
 <?php
 class Controller{
-    protected $dbClient;
+    protected $dbManager;
     
     public function __construct(){
-        $this->dbClient = DBConnect::getInstance()->getClient();
+        $this->dbManager = DBConnect::getInstance()->getManager();
+
     }
 
     public function display($id){

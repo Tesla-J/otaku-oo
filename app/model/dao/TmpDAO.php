@@ -31,7 +31,7 @@ class TmpDAO{
     }
 
     private function __construct(){
-        $this->mongoClient = DBConnect::getInstance()->getClient();
+        //$this->mongoClient = DBConnect::getInstance()->getClient();
 
         if(session_status() !== PHP_SESSION_ACTIVE)
             session_start();
