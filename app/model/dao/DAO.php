@@ -25,9 +25,9 @@ class DAO{
     
         $dtoArray = [];
         foreach($rows as $row){
-            $dtoArray[$row->_id] = new DTO::fromArrayToDTO($row);
+            $dtoArray[$row->_id] = DTO::parseArray($row);
         }
-        
+
         return $dtoArray;
     }
 
