@@ -14,7 +14,7 @@ class DAO{
 
     public function insertOne(DTO $dto){
         try{
-            $bulkWrite->insertOne($dto->toArray());
+            $this->bulkWrite->insertOne($dto->toArray());
             $this->manager->executeBulkWrite($this->collection, $bulkWrite);
         }
         catch(MongoDB\Driver\Exception\Exception $e){
@@ -34,7 +34,7 @@ class DAO{
         }
     }
 
-    public function find($id) array | null{
+    public function find($id) : array | null{
         $filter = ['_id' => $id];
 
         return $this->findAll($filter);
@@ -42,7 +42,7 @@ class DAO{
 
     public function update($id, $dto){
         try{
-            $bulkWrite->update(['_id' => $id], $dto->toArray());
+            $this->bulkWrite->update(['_id' => $id], $dto->toArray());
             $this->manager->executeBulkWrite($this->collection, $bulkWrite);
         }
         catch(MongoDB\Driver\Exception\Exception $e){
@@ -52,7 +52,7 @@ class DAO{
 
     public function delete($id){
         try{
-            $bulkWrite->delete(['_id' => $id]);
+            $this->bulkWrite->delete(['_id' => $id]);
             $this->manager->executeBulkWrite($this->collection, $bulkWrite);
         }
         catch(MongoDB\Driver\Exception\Exception $e){
