@@ -9,11 +9,26 @@ class DAO{
     }
 
     public function insertOne(DTO $dto){
-    
+        try{
+            $bulkWrite = new MongoDB\Driver\BulkWrite;
+            $bulkWrite->insertOne($dto->getData);
+            $this->manager->executeBulkWrite($this->collection, $bulkWrite);
+        }
+        catch(MongoDB\Driver\Exception\Exception $e){
+            echo $e->getMessage();
+        }
     }
 
-    public function findAll(){
-
+    public function findAll() : array | null{
+        $query = new MongoDB\Driver\Query([]);
+        $rows = $this->manager->executeQuery($this->collection, $query);
+    
+        $dtoArray = [];
+        foreach($rows as $row){
+            $dtoArray[$row->_id] = new DTO::fromArrayToDTO($row);
+        }
+        
+        return $dtoArray;
     }
 
     public function find($id){
