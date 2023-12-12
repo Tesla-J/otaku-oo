@@ -3,6 +3,8 @@ class DAO{
     protected $manager;
     protected $collection;
 
+
+    # $collection : specifies the collection we'll work with
     public function __construct(string $collection){
         $this->collection = $collection;
         $this->manager = DBConnect::getInstance()->getManager();
@@ -19,15 +21,17 @@ class DAO{
         }
     }
 
-    public function findAll() : array | null{
-        $query = new MongoDB\Driver\Query([]);
+    public function findAll($filter = []) : array | null{
+        $query = new MongoDB\Driver\Query($filter);
         $rows = $this->manager->executeQuery($this->collection, $query)<;
         
         return $rows;
     }
 
-    public function find($id){
+    public function find($id) array | null{
+        $filter = ['_id' => $id];
 
+        return $this->findAll($filter);
     }
 
     public function update($id, $dto){
