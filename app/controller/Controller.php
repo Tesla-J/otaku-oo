@@ -26,4 +26,9 @@ class Controller{
     public function addNew($dto){
 
     }
+
+    # $viewName : view name without extension
+    public function renderView($viewName){
+        require_once __DIR__ . "/../view/$viewName.php";
+    }
 }
