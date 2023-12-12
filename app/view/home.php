@@ -1,20 +1,3 @@
-<?php
-    require_once(__DIR__ . "/../model/dto/PostDTO.php");
-    require_once(__DIR__ . "/../model/dao/TmpDAO.php");
-
-    if(session_status() !==PHP_SESSION_ACTIVE)session_start();
-
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        extract($_POST);
-        
-        $dao = TmpDAO::getInstance();
-        $newPost = new PostDTO($dao->getCurrentPostId()+1, $title, null, $content, []);
-        $dao->addPost($newPost);
-
-        header("location: home.php");
-    }
-?>
-
 <html>
 <head>
     <title>Otaku king - sign up</title>
@@ -25,7 +8,7 @@
 
 <body>
     <h1>Posts</h1>
-    <form action="home.php" method="post">
+    <form action="/post/new" method="post">
 
         <label for="title">Title:</label>
         <input id="title" name="title" required/>
@@ -37,7 +20,7 @@
         <input type="reset" value="Clear" />
         <br>
     </form>
-
+    <hr>
     <h2>Feed</h2>
 
     <?php foreach(TmpDAO::getInstance()->getPosts() as $id => $post): ?>
@@ -49,6 +32,37 @@
         <br>
     <?php endforeach ?>
 
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #222222;
+            color: white;
+        }
+
+        hr{
+            color: white;
+
+        }
+
+        section{
+            width: 70vw;
+            height: 25vh; 
+            border: solid 2px;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        section,h2{
+            align-self: center;
+        }
+
+        p{
+            align-content: justify;
+            
+        }
+    </style>
 </body>
 
 </html>
