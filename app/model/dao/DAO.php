@@ -23,10 +23,15 @@ class DAO{
     }
 
     public function findAll($filter = []) : array | null{
-        $query = new MongoDB\Driver\Query($filter);
-        $rows = $this->manager->executeQuery($this->collection, $query)<;
-        
-        return $rows;
+        try{
+            $query = new MongoDB\Driver\Query($filter);
+            $rows = $this->manager->executeQuery($this->collection, $query);
+            
+            return $rows;
+        }
+        catch(MongoDB\Driver\Exception\Exception $e){
+            echo $e->getMessage();
+        }
     }
 
     public function find($id) array | null{
@@ -36,10 +41,22 @@ class DAO{
     }
 
     public function update($id, $dto){
-
+        try{
+            $bulkWrite->update(['_id' => $id], $dto->toArray());
+            $this->manager->executeBulkWrite($this->collection, $bulkWrite);
+        }
+        catch(MongoDB\Driver\Exception\Exception $e){
+            echo $e->getMessage();
+        }
     }
 
     public function delete($id){
-
+        try{
+            $bulkWrite->delete(['_id' => $id]);
+            $this->manager->executeBulkWrite($this->collection, $bulkWrite);
+        }
+        catch(MongoDB\Driver\Exception\Exception $e){
+            echo $e->getMessage();
+        }
     }
 }
