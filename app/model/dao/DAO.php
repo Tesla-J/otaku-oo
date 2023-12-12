@@ -13,7 +13,7 @@ class DAO{
     public function insertOne(DTO $dto){
         try{
             $bulkWrite = new MongoDB\Driver\BulkWrite;
-            $bulkWrite->insertOne($dto->getData);
+            $bulkWrite->insertOne($dto->toArray());
             $this->manager->executeBulkWrite($this->collection, $bulkWrite);
         }
         catch(MongoDB\Driver\Exception\Exception $e){
