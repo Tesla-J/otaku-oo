@@ -7,14 +7,16 @@ abstract class DAO{
 
     # $collection : specifies the collection we'll work with
     public function __construct(string $collection){
-        $this->collection = $collection;
+        $this->collection = "otaku-king." . $collection;
         $this->manager = DBConnect::getInstance()->getManager();
         $this->bulkWrite = new MongoDB\Driver\BulkWrite;
     }
 
     public function insertOne(DTO $dto){
         try{
-            $this->bulkWrite->insertOne($dto->toArray());
+            $dataArray = $dto->toArray();
+            array_shift($dataArray);
+            $this->bulkWrite->insert($dataArray);
             $this->manager->executeBulkWrite($this->collection, $this->bulkWrite);
         }
         catch(MongoDB\Driver\Exception\Exception $e){

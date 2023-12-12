@@ -5,7 +5,7 @@ class UserDTO implements DTO{
     private $email;
     private $passwordHash;
 
-    public function __construct(string $id, string $username, string $email, string $passwordHash){
+    public function __construct( $id, string $username, string $email, string $passwordHash){
         $this->id = $id;
         $this->username = $username;
         $this->email = $email;

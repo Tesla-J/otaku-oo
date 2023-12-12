@@ -37,9 +37,9 @@ class UserController extends Controller{
                 return;
             }
             
-            $dao = TmpDAO::getInstance();
-            $newUser = new UserDTO($dao->getCurrentUserId()+1, $username, $email, md5($password1));
-            $dao->addUser($newUser);
+            $dao = new UserDAO;
+            $newUser = new UserDTO(null, $username, $email, md5($password1));
+            $dao->insertOne($newUser);
 
             header("location: signin");
         }else
