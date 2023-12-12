@@ -1,5 +1,5 @@
 <?php
-class UserDTO{
+class UserDTO implements DTO{
     private $id;
     private $username;
     private $email;
@@ -12,20 +12,22 @@ class UserDTO{
         $this->passwordHash = $passwordHash;
     }
 
-    public function getId() : string{
-        return $this->id;
+    public function toArray() : array{
+        return [
+            '_id' => $this->id,
+            'username' => $this->username,
+            'email' => $this->email,
+            'passwordHash' => $this->passwordHash
+        ];
     }
 
-    public function getUsername() : string{
-        return $this->username;
-    }
-
-    public function getEmail() : string{
-        return $this->email;
-    }
-
-    public function getPasswordHash(){
-        return $this->passwordHash;
+    public static function parseArray(array $data) : UserDTO{
+        return new self(
+            $data['id'],
+            $data['username'],
+            $data['email'],
+            "I'm not that dumb"
+        );
     }
 }
 ?>
