@@ -21,14 +21,9 @@ class DAO{
 
     public function findAll() : array | null{
         $query = new MongoDB\Driver\Query([]);
-        $rows = $this->manager->executeQuery($this->collection, $query);
-    
-        $dtoArray = [];
-        foreach($rows as $row){
-            $dtoArray[$row->_id] = DTO::parseArray($row);
-        }
-
-        return $dtoArray;
+        $rows = $this->manager->executeQuery($this->collection, $query)<;
+        
+        return $rows;
     }
 
     public function find($id){
