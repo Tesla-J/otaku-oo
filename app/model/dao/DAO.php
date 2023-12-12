@@ -1,6 +1,6 @@
 <?php
-class DAO{
-    protected $manager;
+abstract class DAO{
+    private $manager;
     private $collection;
     private $bulkWrite;
 
