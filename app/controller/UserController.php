@@ -41,8 +41,8 @@ class UserController extends Controller{
             $newUser = new UserDTO(null, $username, $email, md5($password1));
             $dao->insertOne($newUser);
 
-            header("location: signin");
+            $this->renderView('signin');
         }else
-            require_once __DIR__ . "/../view/signup.php";
+            $this->renderView('signup');
     }
 }
