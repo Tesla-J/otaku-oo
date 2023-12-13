@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="suppert/css/global.css" />
     <link rel="stylesheet" href="suppert/css/landing_page.css" />
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="views/support/css/font-awesome/css/font-awesome.min.css" />
 </head>
 
 <body>
