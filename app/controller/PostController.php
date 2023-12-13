@@ -1,7 +1,10 @@
 <?php
 class PostController extends Controller{
     public function displayAll(){
-        $this->renderView("home");
+        $dao = new PostDAO();
+        $dtoArray = PostDTO::parseArray($dao->findAll());
+
+        $this->renderView("home", $dtoArray);
     }
 
     public function addNew($dto = null){

@@ -23,10 +23,11 @@
     <hr>
     <h2>Feed</h2>
 
-    <?php foreach(TmpDAO::getInstance()->getPosts() as $id => $post): ?>
+    <?php foreach($args as $postDTO): ?>
         <section>
-            <h2><?= $post->getTitle() ?></h2>
-            <p><?= $post->getContent() ?></p>
+            <? $postData = $postDTO->toArray() ?>
+            <h2><?= $postData['title'] ?></h2>
+            <p><?= $postData['content'] ?></p>
             <br>
         </section>
         <br>
