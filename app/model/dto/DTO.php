@@ -5,5 +5,5 @@ interface DTO{
     public function toArray() : array;
 
     # Converts an array returned from a DAO object into a specific DTO object
-    public static function parseArray(array $data);
+    public static function parseArray(array $data) : array;
 }
