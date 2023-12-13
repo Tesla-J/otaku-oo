@@ -26,7 +26,6 @@ class UserDTO implements DTO{
         $dtoArray = [];
 
         foreach($data as $row){
-            echo $row->_id . " " . $row->username;
             $dtoArray[$index++] = new self(
                 $row->_id,
                 $row->username,
