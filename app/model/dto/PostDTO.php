@@ -24,14 +24,21 @@ class PostDTO implements DTO{
         ];
     }
 
-    public static function parseArray(array $data) : PostDTO{
-        return new self(
-            $data['id'],
-            $data['title'],
-            $data['author'],
-            $data['content'],
-            $data['images']
-        );
+    public static function parseArray(array $data) : array{
+        $index = 0;
+        $dtoArray = [];
+
+        foreach($data as $row){
+            $dtoArray[$index++] = new self(
+                $data['id'],
+                $data['title'],
+                $data['author'],
+                $data['content'],
+                $data['images']
+            );
+        }
+
+        return $dtoArray;
     }
 }
 ?>
