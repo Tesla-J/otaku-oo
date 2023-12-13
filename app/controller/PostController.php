@@ -9,9 +9,9 @@ class PostController extends Controller{
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             extract($_POST);
             
-            $dao = TmpDAO::getInstance();
-            $newPost = new PostDTO($dao->getCurrentPostId()+1, $title, null, $content, []);
-            $dao->addPost($newPost);
+            $dao = new PostDAO;
+            $newPost = new PostDTO(null, $title, null, $content, []);
+            $dao->insertOne($newPost);
 
             header("location: /post");
         }
