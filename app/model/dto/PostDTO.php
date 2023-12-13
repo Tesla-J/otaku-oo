@@ -30,11 +30,11 @@ class PostDTO implements DTO{
 
         foreach($data as $row){
             $dtoArray[$index++] = new self(
-                $data['id'],
-                $data['title'],
-                $data['author'],
-                $data['content'],
-                $data['images']
+                $row->_id,
+                $row->title,
+                $row->author,
+                $row->content,
+                $row->images
             );
         }
 
