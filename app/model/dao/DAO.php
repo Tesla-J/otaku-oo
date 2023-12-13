@@ -29,7 +29,7 @@ abstract class DAO{
             $query = new MongoDB\Driver\Query($filter);
             $rows = $this->manager->executeQuery($this->collection, $query);
             
-            return $rows;
+            return $rows->toArray();
         }
         catch(MongoDB\Driver\Exception\Exception $e){
             echo $e->getMessage();

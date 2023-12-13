@@ -21,13 +21,21 @@ class UserDTO implements DTO{
         ];
     }
 
-    public static function parseArray(array $data) : UserDTO{
-        return new self(
-            $data['id'],
-            $data['username'],
-            $data['email'],
-            $data['passwordHash'] # Actually I am (personal joke, go 1 commit back to understand... if you can)
-        );
+    public static function parseArray(array $data) : array{
+        $index = 0;
+        $dtoArray = [];
+
+        foreach($data as $row){
+            echo $row->_id . " " . $row->username;
+            $dtoArray[$index++] = new self(
+                $row->_id,
+                $row->username,
+                $row->email,
+                $row->passwordHash # Actually I am (personal joke, go 1 commit back to understand... if you can)
+            );
+        }
+
+        return $dtoArray;
     }
 }
 ?>

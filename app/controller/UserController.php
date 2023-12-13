@@ -9,19 +9,18 @@ class UserController extends Controller{
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             extract($_POST);
             
-            $dao = TmpDAO::getInstance();
-            $users = $dao->getUsers();
+            $dao = new UserDAO;
+            $user = $dao->findAll(['username' => $username]);
 
-            foreach($users as $id => $user){
-                if($user->getUsername() == $username && $user->getPasswordHash() == md5($password))
-                    header("location: /post");
-                echo "Wrong login details!";
+            if(isset($user[0]) && $user[0]->passwordHash == md5($password)){
+                $this->renderView("home");
+            }else{
+                echo 'Wrong login details';
+                $this->renderView('signin');
             }
-
-            var_dump($users);//header("location: signin");
         }
         else
-            require_once __DIR__ . "/../view/signin.php";
+            $this->renderView("signin");
     }
 
     public function logout(){
