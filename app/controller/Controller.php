@@ -28,7 +28,7 @@ class Controller{
     }
 
     # $viewName : view name without extension
-    public function renderView($viewName){
+    public function renderView($viewName, $args = array()){
         require_once __DIR__ . "/../view/$viewName.php";
     }
 }
