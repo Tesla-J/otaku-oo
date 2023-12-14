@@ -1,0 +1,94 @@
+@import url("global.css");
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222222;
+    color: white;
+}
+
+hr{
+    color: white;
+
+}
+
+.post-section{
+    width: 40vw;
+    height: auto; 
+    border: solid 2px;
+    border-radius: 10px;
+    margin: 10px;
+
+    background-color: white;
+}
+
+.post-header{
+    background-color: black;
+    padding: 0.3rem 0.1rem 0.1rem 0.1rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.author-profile-picture{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.post-title{
+    align-self: center;
+    color: black;
+}
+
+.post-content{
+    align-content: justify;
+    width: inherit;
+    color: black;
+}
+
+/*
+    Post reaction
+*/
+.action-list{
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    background-color: black;;
+
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-item{
+    padding: 0.5rem;
+    width: 100%;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.action-item:hover{
+    background-color: white;
+    color: black;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.action-link{
+    color: inherit;
+    align-self: center;
+    justify-self: center;
+}
+
+.action-link:visited{
+    color: inherit;
+}
+
+.action-link:active{
+    color: inherit;
+}
