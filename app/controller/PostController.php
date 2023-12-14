@@ -13,7 +13,7 @@ class PostController extends Controller{
             extract($_POST);
             
             $dao = new PostDAO;
-            $newPost = new PostDTO(null, $title, null, $content, []);
+            $newPost = new PostDTO(null, $title, $_SESSION['username'], $content, []);
             $dao->insertOne($newPost);
 
             header("location: /post");

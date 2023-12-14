@@ -13,14 +13,18 @@ class UserController extends Controller{
             $user = $dao->findAll(['username' => $username]);
 
             if(isset($user[0]) && $user[0]->passwordHash == md5($password)){
-                $this->renderView("home");
+                # setting up session
+                $_SESSION['username'] = $username;
+                $_SESSION['_id'] = $user[0]->_id;
+
+                header('location: /post');
             }else{
                 echo 'Wrong login details';
-                $this->renderView('signin');
+                $this->renderView('signin', [], false);
             }
         }
         else
-            $this->renderView("signin");
+            $this->renderView("signin", [], false);
     }
 
     public function logout(){
@@ -40,8 +44,8 @@ class UserController extends Controller{
             $newUser = new UserDTO(null, $username, $email, md5($password1));
             $dao->insertOne($newUser);
 
-            $this->renderView('signin');
+            $this->renderView('signin', [], false);
         }else
-            $this->renderView('signup');
+            $this->renderView('signup', [], false);
     }
 }
