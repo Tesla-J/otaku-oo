@@ -28,7 +28,9 @@ class Controller{
     }
 
     # $viewName : view name without extension
-    public function renderView($viewName, $args = array()){
+    public function renderView($viewName, $args = array(), $hasHeader=true){
+        if($hasHeader)
+            $this->renderView('header', [], false);
         require_once __DIR__ . "/../view/$viewName.php";
     }
 }
