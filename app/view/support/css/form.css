@@ -1,0 +1,120 @@
+@import url("global.css");
+
+body{
+    color: white;
+    background-image: url("/view/support/images/anime.jpg");
+    background-color: #181818;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrapper{
+    width: inherit;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.9);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    padding: 5rem 2rem;
+    box-shadow: -2px -2px 3px 4px #E14477, 2px 2px 3px 4px aqua;
+    border-radius: 1rem;
+}
+
+/*
+    Inputs
+*/
+
+.field-area{
+    position: relative;
+}
+
+.field{
+    width: 100%;
+    border-radius: 0.5rem;
+    border: solid 0.1rem;
+    padding: 0.5rem;
+    margin-bottom: 0.7rem;
+    outline: none;
+    background: none;
+
+    color: white;
+    cursor: text;
+
+    transition: all 0.5s ease-in;
+}
+
+
+.field:hover{
+    box-shadow: 0 0 2px 2px rgb(225, 149, 54, 0.5);
+    transition: box-sadow 0.5s ease-in;
+}
+
+.field:focus{
+    box-shadow: 0 0 2px 2px #E19536;
+    transition: box-shadow 0.5s ease-in;
+}
+
+/*
+    Labels
+*/
+
+.label{
+    position: absolute;
+    background-color: rgba(0,0,0,0.9);
+    left: 0.5rem;
+    top: 0.3rem;
+
+    transition: top 0.2s ease-in;
+}
+
+.field:hover ~ .label{
+    left: 0.5rem;
+    top: -0.5rem;
+    font-size: 0.7rem;
+    color: #E19536;
+
+    transition: top 0.2s ease-in;
+}
+
+.field:focus ~ .label, .field:not(:placeholder-shown).field:not(:focus) ~ .label{
+    left: 0.5rem;
+    top: -0.5rem;
+    font-size: 0.7rem;
+    color: #E19536;
+
+    transition: top 0.2s ease-in;
+}
+
+/*
+    buttons
+*/
+
+.button{
+    border-radius: 1rem;
+    margin: 0 1rem;
+    width: 100%;
+    padding: 0.5rem 0;
+    margin: 0.7rem 0 0.5rem 0;
+}
+
+/*
+    Anchors
+*/
+
+.raw-link{
+    color: white;
+}
+
+.raw-link:visited{
+    color: white;
+}
+
+.raw-link:active{
+    color: white;
+}
