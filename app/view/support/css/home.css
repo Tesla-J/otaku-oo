@@ -1,94 +1,50 @@
-@import url("global.css");
+@import url("global.module.css");
 
-.main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #222222;
-    color: white;
-}
+/*
+    Reseting imported properties for section element
+*/
 
-hr{
-    color: white;
-
-}
-
-.post-section{
-    width: 40vw;
-    height: auto; 
-    border: solid 2px;
-    border-radius: 10px;
-    margin: 10px;
-
-    background-color: white;
-}
-
-.post-header{
-    background-color: black;
-    padding: 0.3rem 0.1rem 0.1rem 0.1rem;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.author-profile-picture{
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-}
-
-.post-title{
-    align-self: center;
-    color: black;
-}
-
-.post-content{
-    align-content: justify;
-    width: inherit;
-    color: black;
+section{
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 0;
 }
 
 /*
-    Post reaction
+    ============== homepage style
 */
-.action-list{
-    margin: 0;
-    padding: 0;
+
+/* Containers */
+
+.main-container{
     display: flex;
-
-    background-color: black;;
-
-    list-style: none;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    
 }
 
-.action-item{
-    padding: 0.5rem;
+.side-nav-container{
+    background-color: red;
     width: 100%;
-    transition-property: all;
-    transition-duration: 0.5s;
+    height: 200vh;
+    flex: 1;
+
+    border: solid 0 var(--container-border-width) 0 0 var(--container-border-color);
 }
 
-.action-item:hover{
-    background-color: white;
-    color: black;
-    transition-property: all;
-    transition-duration: 0.5s;
+.posts-container{
+    background-color: blue;
+    width: 100%;
+    height: 200vh;
+    flex: 3;
+    overflow: auto;
 }
 
-.action-link{
-    color: inherit;
-    align-self: center;
-    justify-self: center;
-}
+.aside-container{
+    background-color: green;
+    width: 100%;
+    height: 200vh;
+    flex: 2;
 
-.action-link:visited{
-    color: inherit;
-}
-
-.action-link:active{
-    color: inherit;
+    border: solid 0 0 0 var(--container-border-width) var(--container-border-color);
 }

@@ -1,0 +1,151 @@
+@import url("global.module.css");
+
+body{
+    overflow: auto;
+}
+
+section{
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+}
+
+/*
+    Side nav
+*/
+
+.side-nav{
+    flex: 2;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-list{
+    list-style: none;
+}
+
+/*
+    Main content (posts)
+*/
+
+.main{
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    background-color: #222222;
+    color: white;
+    padding: 0 2rem;
+}
+
+.new-post-button{
+    color: var(--text-color);
+    background-color: var(--new-post-button-background-color);
+    padding: 1rem;
+    border-radius: 50%;
+    position: fixed;
+    margin: auto auto auto 10rem;
+    bottom: 5rem;
+}
+
+.dialog-blur{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.new-post-dialog{
+    position: absolute;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.1rem 0.1rem aqua;
+}
+
+
+
+.post-section{ 
+    border-radius: 2rem;
+    margin: 10px;
+
+    background-color: white;
+}
+
+.post-header{
+    background-color: black;
+    padding: 0.3rem 0.1rem 0.1rem 0.1rem;
+
+    /*display: flex;*/
+    flex-direction: row;
+    align-items: center;
+}
+
+.author-profile-picture{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.management-options{
+    width: auto;
+    background: none;
+}
+
+.post-title{
+    align-self: center;
+    color: black;
+}
+
+.post-content{
+    text-align: justify;
+    width: inherit;
+    margin: inherit;
+    color: black;
+}
+
+/*
+    Post reaction
+*/
+.action-list{
+    margin: 0;
+    padding: 0;
+    /*display: flex;*/
+
+    background-color: black;;
+
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-item{
+    padding: 0.5rem;
+    width: 100%;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.action-item:hover{
+    background-color: white;
+    color: black;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.action-link{
+    color: inherit;
+    align-self: center;
+    justify-self: center;
+}
+
+.action-link:visited{
+    color: inherit;
+}
+
+.action-link:active{
+    color: inherit;
+}

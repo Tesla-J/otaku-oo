@@ -1,6 +1,9 @@
 :root{
     --background-color: #181818;
     --text-color: white;
+    --new-post-button-background-color: #d93a00;
+    --container-border-color: #cccccc;
+    --container-border-width: 0.2rem;
 }
 
 body{
@@ -10,4 +13,5 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
+    text-align: justify;
 }
